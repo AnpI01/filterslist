@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<th:block th:fragment="Food">
+<div class=""><input id="grocery" name="subca" type="radio" value="Grocery" th:checked="${subcategory == 'Grocery'}"/>
+Grocery
+</div>
+<div class=""><input id="snacks" name="subca" type="radio" value="Snacks" th:checked="${subcategory == 'Snacks'}"/>
+Snacks
+</div>
+<div class=""><input id="grains" name="subca" type="radio" value="Grains" th:checked="${subcategory == 'Grains'}"/>
+Grains
+</div>
+<div class=""><input id="meat" name="subca" type="radio" value="Meat" th:checked="${subcategory == 'Meat'}"/>
+Meat
+</div>
+<div class=""><input id="vegetables" name="subca" type="radio" value="Vegetables" th:checked="${subcategory == 'Vegetables'}"/>
+Vegetables
+</div>
+</th:block>
+</body>
+</html>

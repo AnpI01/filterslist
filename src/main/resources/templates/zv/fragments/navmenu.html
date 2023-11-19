@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<div id="topbarcomp" th:fragment="tobarcmp">
+<div id="dcheadlg" class="wbg dc-wh dc-headlg pb pt" >       
+<div class="containerall">		
+<a  th:href="@{/}"><span class="logo3">filterlist</span></a>  
+<ul class="lst-ilna dc-fr ml">
+<li><a rel="nofollow" href="/registerstore" class="btn btn-cashb">Add Store</a></li>
+<li><a rel="nofollow" href="/contact" class="btn btn-cashb">Contact</a> </li> 
+</ul>		
+</div>
+</div>
+
+<a href="#" class="backtotop"><i class="fa fa-arrow-circle-up fa-3x"></i></a>
+
+<script>
+$(document).ready(function(){jQuery(".megamenu").megamenu();$(window).scroll(function(){55<$(window).scrollTop()?$(".backtotop").fadeIn():$(".backtotop").fadeOut()});$(".backtotop").click(function(){$("html, body").animate({scrollTop:0},590);return!1})});
+</script>
+</div>
+
+
+<div class="dc-wh" th:fragment="headermenu">    
+<div id="dnbnva" class="dc-clear dc-navbar"> 
+<div class="containerall">
+<nav>	
+    <ul class="megamenu">
+<th:block th:replace="~{zv/maincategories/fashion :: fashion}"></th:block>
+<th:block th:replace="~{zv/maincategories/electronics :: elec}"></th:block>
+<th:block th:replace="~{zv/maincategories/home :: home}"></th:block>
+<th:block th:replace="~{zv/maincategories/food :: food}"></th:block>
+<th:block th:replace="~{zv/maincategories/appliances :: appliances}"></th:block>
+    </ul>
+ </nav>    
+</div>
+</div>
+</div>
+
+</body>
+</html>

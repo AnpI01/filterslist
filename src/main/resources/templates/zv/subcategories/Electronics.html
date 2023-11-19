@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<th:block th:fragment="Electronics">
+<div class=""><input id="Electronics" name="subca" type="radio" value="Electronics" th:checked="${subcategory == 'Electronics'}"/>
+Electronics
+</div>
+<div class=""><input id="Mobiles" name="subca" type="radio" value="Mobiles" th:checked="${subcategory == 'Mobiles'}"/>
+Mobiles
+</div>
+<div class=""><input id="Computers" name="subca" type="radio" value="Computers" th:checked="${subcategory == 'Computers'}"/>
+Computers
+</div>
+</th:block>
+</body>
+</html>

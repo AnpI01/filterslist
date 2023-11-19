@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<th:block th:fragment="Fashion">
+<div class=""><input id="Fashion" name="subca" type="radio" value="Fashion" th:checked="${subcategory == 'Fashion'}"/>
+Fashion
+</div>
+<div class=""><input id="Men" name="subca" type="radio" value="Men" th:checked="${subcategory == 'Men'}"/>
+Men
+</div>
+<div class=""><input id="Women" name="subca" type="radio" value="Women" th:checked="${subcategory == 'Women'}"/>
+Women
+</div>
+<div class=""><input id="Kids" name="subca" type="radio" value="Kids" th:checked="${subcategory == 'Kids'}"/>
+Kids
+</div>
+<div class=""><input id="Shoes" name="subca" type="radio" value="Shoes" th:checked="${subcategory == 'Shoes'}"/>
+Shoes
+</div>
+<div class=""><input id="Jewellery" name="subca" type="radio" value="Jewellery" th:checked="${subcategory == 'Jewellery'}"/>
+Jewellery
+</div>
+<div class=""><input id="Watches" name="subca" type="radio" value="Watches" th:checked="${subcategory == 'Watches'}"/>
+Watches
+</div>
+<div class=""><input id="Sportswear" name="subca" type="radio" value="Sportswear" th:checked="${subcategory == 'Sportswear'}"/>
+Sportswear
+</div>
+<div class=""><input id="Sportsgear" name="subca" type="radio" value="Sportsgear" th:checked="${subcategory == 'Sportsgear'}"/>
+Sportsgear
+</div>
+</th:block>
+</body>
+</html>

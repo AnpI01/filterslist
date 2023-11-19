@@ -1,0 +1,25 @@
+<th:block th:fragment="storelst">
+<th:block th:if="${not #lists.isEmpty(storeslst)}"><th:block th:each="store: ${storeslst}">
+<div class="row"><div class="col-fix1">
+	<div class="tnd"><div class="pdal">    				
+	<div class="cpnbl">
+	<div class="pt"><span class="bdbp" th:text="${store.name}"></span></div>
+ 	</div>
+ 	<div class="cpnbr">
+	<div class="oftbl">	   		    	
+	<a rel="nofollow" th:href="@{/visitstore/{storename}(storename = ${#strings.toLowerCase(store.name)})}" target="_blank">
+	<strong th:text="${store.description}"></strong> 
+	</a></div>
+	<div class="btxtn pto"><strong th:text="${store.offer}"></strong></div>
+	 <div class="pt"> 
+    <a rel="nofollow" th:href="@{/visitstore/{storename}(storename = ${#strings.toLowerCase(store.name)})}" class="btn btn-deal" target="_blank">Visit Store</a>				  
+	</div>     				  
+	</div>  			 	
+ 	</div></div>
+</div></div>
+</th:block><input type="hidden" id="curnewval" th:value="${laststore}">
+</th:block>
+<th:block th:if="${#lists.isEmpty(storeslst)}">
+<input type="hidden" id="curnewval" value="end">
+</th:block>
+</th:block>

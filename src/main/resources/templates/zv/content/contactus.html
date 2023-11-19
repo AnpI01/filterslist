@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>Contact Us - filterlist</title>
+<meta name="robots" CONTENT="INDEX, FOLLOW" />
+
+<th:block th:replace="~{zv/fragments/header :: partheader}"></th:block>
+</head>
+<body>
+<div th:replace="~{zv/fragments/navmenu :: tobarcmp}"></div>
+<div th:replace="~{zv/fragments/navmenu :: headermenu}"></div>
+ <main>
+		<div class="dc-clear containerall">
+		<div class="panel panel-default">
+  		<div class="panel-body">
+<h2>Contact Us</h2>
+	<p>You may contact us by submitting below form. We respond to your queries as soon as possible. </p>
+		<div class="mlb"><h4 class="gentxth">Send Message</h4></div>
+		<form action="#" th:action="@{/contact}" method="post" th:object="${message}" class="form-horizontal">	
+				<span th:if="${message.isSubmitted}"><p><div class="dbsucc">Message submitted.</div></p></span>				
+		<span th:if="${!message.isSubmitted}">
+			<div class="form-group">						
+    				<label for="name" class="col-sm-2 control-label">Name*</label>
+    				<div class="col-sm-10">
+    				<input type="text" th:field="*{name}" maxlength="60" class="form-control input-sm" />
+    				<p th:if="${#fields.hasErrors('name')}" th:errorclass="dberror" th:errors="*{name}" />
+    				</div>
+  			</div>
+			
+		<div class="form-group">
+    				<label for="email" class="col-sm-2 control-label">Email*</label>
+    				<div class="col-sm-10">
+    				<input type="text" th:field="*{email}" maxlength="80" class="form-control input-sm" />
+    				<p th:if="${#fields.hasErrors('email')}" th:errorclass="dberror" th:errors="*{email}" />
+    				</div>
+  			</div>
+
+			<div class="form-group">
+    				<label for="message" class="col-sm-2 control-label">Message*</label>
+    				<div class="col-sm-10">
+    		    	<textarea type="text" th:field="*{message}" rows="5" class="form-control" />
+    				<p th:if="${#fields.hasErrors('message')}" th:errorclass="dberror" th:errors="*{message}" />
+    				</div>
+  			</div>
+
+	    	<div class="bt-acc">
+      			<button type="submit" class="btn btn-cashb">SUBMIT</button>
+    			</div>
+		</span>
+	 	 </form>
+</div>
+</div></div></main> 
+</body>
+
+<footer th:replace="~{zv/fragments/footer :: zvfooter}"></footer>
+</html>

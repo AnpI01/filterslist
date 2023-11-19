@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>List Best Stores and Offers Register - filterlist</title>
+<meta name="robots" CONTENT="INDEX, FOLLOW" />
+
+<th:block th:replace="~{zv/fragments/header :: partheader}"></th:block>
+</head>
+<body>
+<div th:replace="~{zv/fragments/navmenu :: tobarcmp}"></div>
+<div th:replace="~{zv/fragments/navmenu :: headermenu}"></div>
+ <main>
+		<div class="dc-clear containerall">
+		<div class="panel panel-default">
+  		<div class="panel-body">
+<h2>Register Your Store</h2>
+	<p>Initiate your store registration process for listing it on filterlist by submitting below details. </p>
+		<div class="mlb"><h4 class="gentxth">Store Details</h4></div>
+		<form action="#" th:action="@{/registerstore}" method="post" th:object="${register}" class="form-horizontal">	
+				<span th:if="${register.isSubmitted}"><p><div class="dbsucc">Store details saved, it will be listed after review.</div></p></span>				
+		<span th:if="${!register.isSubmitted}">
+			<div class="form-group">						
+    				<label for="name" class="col-sm-2 control-label">Store Name*</label>
+    				<div class="col-sm-10">
+    				<input type="text" th:field="*{name}" maxlength="60" class="form-control input-sm" />
+    				<p th:if="${#fields.hasErrors('name')}" th:errorclass="dberror" th:errors="*{name}" />
+    				</div>
+  			</div>
+		<div class="form-group">
+    				<label for="url" class="col-sm-2 control-label">Store URL*</label>
+    				<div class="col-sm-10">
+    				<input type="text" th:field="*{url}" maxlength="80" class="form-control input-sm" />
+    				<p th:if="${#fields.hasErrors('url')}" th:errorclass="dberror" th:errors="*{url}" />
+    				</div>
+  			</div>
+		<div class="form-group">
+    				<label for="email" class="col-sm-2 control-label">Email*</label>
+    				<div class="col-sm-10">
+    				<input type="text" th:field="*{email}" maxlength="80" class="form-control input-sm" />
+    				<p th:if="${#fields.hasErrors('email')}" th:errorclass="dberror" th:errors="*{email}" />
+    				</div>
+  			</div>
+	    	<div class="bt-acc">
+      			<button type="submit" class="btn btn-cashb">SUBMIT</button>
+    			</div>
+		</span>
+	 	 </form>
+</div>
+</div></div></main> 
+</body>
+
+<footer th:replace="~{zv/fragments/footer :: zvfooter}"></footer>
+</html>

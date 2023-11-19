@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title th:text ="'Special Stores and Offers' + (${!storeslst.empty}? ' in '+${category}+' '+${subcategory}+' category' : '') + ' - filterlist'"></title>
+<meta name="description" th:content="'Find special stores in various categories such as food, fashion, electronics' + (${!storeslst.empty}? ', '+${category}+' '+${subcategory} : '')"/>
+<meta name="keywords" th:content="'special stores, niche stores, special products, special services' + (${!storeslst.empty}? ', '+${category}+' stores '+${subcategory} : '')"/>
+
+<meta property="og:title"  th:content ="'Special Stores and Offers' + (${!storeslst.empty}? ' in '+${category}+' '+${subcategory}+' category' : '') + '- filterlist'"/>
+<meta property="og:url" content="http://www.filterlist/"/>
+<meta property="og:image" content="http://www.filterlist/img/logo.png"/>
+<meta property="og:site_name" content="filterlist"/>
+<meta property="og:description" th:content="'Find special stores in various categories such as food, fashion, electronics' + (${!storeslst.empty}? ', '+${category}+' '+${subcategory} : '')"/>
+
+<meta name="twitter:title" th:content ="'Special Stores and Offers' + (${!storeslst.empty}? ' in '+${category}+' '+${subcategory}+' category' : '') + '- filterlist'"/>
+<meta name="twitter:description" th:content="'Find special stores in various categories such as food, fashion, electronics' + (${!storeslst.empty}? ', '+${category}+' '+${subcategory} : '')"/>
+<meta name="twitter:image" content="http://www.filterlist/img/logo.png"><meta name="twitter:card" content="Summary">
+<meta name="twitter:url" content="http://www.filterlist/"><meta property="twitter:site" content="@filterlist" />
+<link rel="canonical" th:href="@{http://www.filterlist{id}(id= ${param.get('javax.servlet.forward.servlet_path')})}">
+
+<th:block th:replace="~{zv/fragments/header :: partheader}"></th:block>
+</head>
+<body>
+<div th:replace="~{zv/fragments/navmenu :: tobarcmp}"></div>
+<div th:replace="~{zv/fragments/navmenu :: headermenu}"></div>
+<main>
+<div class="containerall panel">
+<div class="panel-body">
+
+<ul class="lstln">  
+<li><a href="/">Home</a></li>
+<li> / Stores</li> 
+<li> / <a th:href="@{/stores/{cate}(cate = ${#strings.toLowerCase(category)})}" th:text="${category}"></a></li>
+<li id="hpathll" th:if="${not #strings.isEmpty(subcategory)}" th:text="'/ '+${subcategory}"></li>
+</ul>
+<hr/>
+<div class="prdt" id="hdcpntittxt"><h1><div th:if="${#strings.isEmpty(subcategory)}"><th:block th:text="${category} +' Stores'"> </th:block></div> 
+<div th:if="${not #strings.isEmpty(subcategory)}"><th:block th:text="${subcategory} +' Stores'"> </th:block></div></h1>
+</div>
+
+<div class="prdml">
+<hr/>
+<div class="prdhd">Sub Categories</div>
+<div class="nano"><div class="nano-content ">
+<th:block th:if="${not #strings.isEmpty(category)}"><span th:replace="~{${'zv/subcategories/' + category +'.html'} :: ${category}}"></span></th:block>
+</div></div>
+<hr/>
+<div class="prdhd">Categories</div>
+<div class="nano"><div class="nano-content ">
+<th:block th:replace="~{zv/subcategories/maincats :: categorylns}"></th:block>
+</div></div>
+</div>
+<div class="prdmr">
+<hr/>
+
+<div th:if="${#lists.isEmpty(storeslst)}"><section style="height:500px" class="prdt">Stores not found for the selected category.</section></div>  
+<section>
+<div id="cpnresults" class="pto">
+<th:block th:replace="~{zv/content/ajaxstores :: storelst}"></th:block>
+</div>
+</section>
+
+<form id="cpnresultsfm" action="/nextstorespage">
+<input type="hidden" id="catgry" name="catgry" th:value="${category}">
+<input type="hidden" id="curval" name="curval"  th:value="${laststore}">
+<input type="hidden" id="subctgry" name="subctgry" th:value="${subcategory}">
+<th:block th:if="${laststore == 'end'}">
+<button type="button" id="cpnresultsln" class="btn btn-cashb btlnh ndiscen" style="width:100%;">LOAD MORE STORES</button>
+</th:block>
+<th:block th:if="${laststore != 'end'}">
+<button type="button" id="cpnresultsln" class="btn btn-cashb btlnh" style="width:100%;">LOAD MORE STORES</button>
+</th:block>
+<div id="cpnresldim" class="ndiscen"><img src="/img/ajax-loader.gif" alt="loading data"></div>
+
+</form>
+<script src="/js/storlist.js"></script>
+
+</div>
+</div></div></main>
+</body>
+<footer th:replace="~{zv/fragments/footer :: zvfooter}"></footer>
+</html>

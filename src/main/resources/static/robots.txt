@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /registerstore
+Disallow: /registerstore/*
+Disallow: /company/*
+Disallow: /contact
+Disallow: /contact/*

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>Find Special Stores and Offers - filterlist</title>
+<meta name="robots" CONTENT="INDEX, FOLLOW" />
+<meta name="description" content="Find best special stores for any product and service "/>
+<meta name="keywords" content="small stores, best services, best products, offers, best price, coupons, deals"/>
+
+<th:block th:replace="~{zv/fragments/header :: partheader}"></th:block>
+</head>
+<body>
+
+ <div th:replace="~{zv/fragments/navmenu :: tobarcmp}"></div>
+
+<div th:replace="~{zv/fragments/navmenu :: headermenu}"></div>  
+
+ <main>
+
+<div class="dc-clear ptthre"></div>
+
+<div class="containerall">
+<div class="panel">
+<div class="panel-body">
+<h2>FASHION STORES</h2>
+<div class= "row">
+<div class="col-md-9 col-fix3l"><a href="/stores/sub/men"><span class="thumbnail">
+<img src="/img/men.png" alt="Men fashion stores"/>
+<div class="cpr">Men</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/shoes"><span class="thumbnail">
+<img src="/img/shoes.png" alt="Shoes men and women fashion stores"/>
+<div class="cpr">Footwear</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/women"><span class="thumbnail">
+<img src="/img/women.png" alt="women fashion stores "/>
+<div class="cpr">Women</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/jewellery"><span class="thumbnail">
+<img src="/img/jewellery.png" alt="Jewellery Stores "/>
+<div class="cpr">Jewellery</div>
+</span></a></div>
+<div class="col-md-9 col-fixl"><a href="/stores/sub/watches"><span class="thumbnail">
+<img src="/img/watches.png" alt="Watch Stores "/>
+<div class="cpr">Watches</div>
+</span></a></div>
+</div>
+</div>
+</div>
+<div class="dc-clear"></div>
+<div class="panel">
+<div class="panel-body">
+<h2>FOOD STORES</h2>
+<div class= "row">
+<div class="col-md-9 col-fix3l"><a href="/stores/sub/grains"><span class="thumbnail">
+<img src="/img/grains.png" alt="Grains Stores"/>
+<div class="cpr">Grains</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/grocery"><span class="thumbnail">
+<img src="/img/grocery.png" alt="Grocery Stores"/>
+<div class="cpr">Grocery</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/snacks"><span class="thumbnail">
+<img src="/img/snacks.png" alt="Snacks Stores"/>
+<div class="cpr">Snacks</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/meat"><span class="thumbnail">
+<img src="/img/meat.png" alt="Meat Stores"/>
+<div class="cpr">Meat</div>
+</span></a></div>
+<div class="col-md-9 col-fixl"><a href="/stores/sub/vegetables"><span class="thumbnail">
+<img src="/img/vegfru.png" alt="Vegetables Stores"/>
+<div class="cpr">Fruits & Vegetables</div>
+</span></a></div>
+</div>
+</div></div>
+<div class="panel">
+<div class="panel-body">
+<h2>ELECTRONICS, APPLIANCES & HOME STORES</h2>
+<div class= "row">
+<div class="col-md-9 col-fix3l"><a href="/stores/electronics"><span class="thumbnail">
+<img src="/img/electronics.png" alt="Electronics Stores"/>
+<div class="cpr">Electronics</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/home"><span class="thumbnail">
+<img src="/img/home.png" alt="Home Stores"/>
+<div class="cpr">Home</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/furniture"><span class="thumbnail">
+<img src="/img/furniture.png" alt="Furniture Stores"/>
+<div class="cpr">Furniture</div>
+</span></a></div>
+<div class="col-md-9 col-fix3"><a href="/stores/sub/kitchen"><span class="thumbnail">
+<img src="/img/kitchen.png" alt="Kitchen Stores"/>
+<div class="cpr">Kitchen</div>
+</span></a></div>
+<div class="col-md-9 col-fixl"><a href="/stores/appliances"><span class="thumbnail">
+<img src="/img/appliances.png" alt="Appliances Stores"/>
+<div class="cpr">Appliances</div>
+</span></a></div>
+</div>
+</div></div>
+</div></main> 
+</body>
+
+<footer th:replace="~{zv/fragments/footer :: zvfooter}"></footer>
+</html>

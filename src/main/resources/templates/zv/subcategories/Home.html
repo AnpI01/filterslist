@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<th:block th:fragment="Home">
+<div class=""><input id="Home" name="subca" type="radio" value="Home" th:checked="${subcategory == 'Home'}"/>
+Home
+</div>
+<div class=""><input id="Furnishing" name="subca" type="radio" value="Furnishing" th:checked="${subcategory == 'Furnishing'}"/>
+Furnishing
+</div>
+<div class=""><input id="Kitchen" name="subca" type="radio" value="Kitchen" th:checked="${subcategory == 'Kitchen'}"/>
+Kitchen
+</div>
+<div class=""><input id="Furniture" name="subca" type="radio" value="Furniture" th:checked="${subcategory == 'Furniture'}"/>
+Furniture
+</div><div class=""><input id="Decor" name="subca" type="radio" value="Decor" th:checked="${subcategory == 'Decor'}"/>
+Decor
+</div>
+</th:block>
+</body>
+</html>
