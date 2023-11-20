@@ -1,1 +1,2 @@
-# filterslist
+# FiltersList 
+The application was developed with the intention of helping small niche businesses in India, who offers excellent products in their categories but due to limited resource they couldn't expose their products to public. The application helps them to scale their businesses by providing a platform where these businesses are listed to make them exposed to public so that they get more traffic and scale their businesses to the levels they deserve.
