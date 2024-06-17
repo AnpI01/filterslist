@@ -7,7 +7,7 @@ Slightly different version is uploaded to Github.
 
 # Functionalities
 + Categorization
-+ Esay navigation
++ Easy navigation
 + View items by category and sub category
 + Registration requests
 + Contact message
